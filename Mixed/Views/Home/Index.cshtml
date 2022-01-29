@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{ ViewData["Title"] = "Home Page"; }
+<div class="row">
+    <div class="container-fluid col-md-6">
+        <p class="text-md-center">Новые айтемы:</p>
+        @if (Model != null)
+@foreach (var items in Model)
+{
+<table>
+    <tr>
+        <td><a asp-controller="Item" asp-action="Index" asp-route-ItemId="@items.Id">@items.Name</a></td>
+        <td>@items.Description</td>
+    </tr>
+</table>}
+    </div>
+    <div class="container-fluid col-md-6">
+        <p class="text-md-center">Больше всего айтемов:</p>
+    </div>
+</div>
+

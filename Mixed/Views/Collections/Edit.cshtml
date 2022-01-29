@@ -1,0 +1,31 @@
+﻿@model Mixed.Models.Collection
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<h2>@Localizer["NewColl"]</h2>
+<form method="post" enctype="multipart/form-data" asp-controller="Collections" asp-action="Edit" asp-route-collectionId="@ViewBag.Collection.Id">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Name">@Localizer["Name"]</label><br />
+            <input asp-for="Name" value="@ViewBag.Collection.Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Theme">@Localizer["Theme"]</label><br />
+            <select asp-for="Theme" class="form-control">
+                <option value="Books">@Localizer["Books"]</option>
+                <option value="Money">@Localizer["Money"]</option>
+                <option value="Guns">@Localizer["Guns"]</option>
+                <option value="Stamps">@Localizer["Stamps"]</option>
+                <option value="Alcohol">@Localizer["Alcohol"]</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">@Localizer["Summary"]</label><br />
+            <textarea class="form-control" rows="3" asp-for="Description">@ViewBag.Collection.Summary.ToString()</textarea>
+        </div>      
+        <div>
+            <button type="submit" class="btn btn-primary mt-1">@Localizer["Create"]</button>
+        </div>
+    </div>
+</form>
