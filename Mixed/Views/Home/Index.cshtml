@@ -2,27 +2,47 @@
 @inject IViewLocalizer Localizer
 @{ ViewData["Title"] = "Home Page"; }
 <div class="row">
-    <div class="container-fluid col-md-6">
-        <p class="text-md-center">Новые айтемы:</p>
+    <div class="container col-md-6">
+        <h3 class="text-justify p-3">@Localizer["NewItems"]</h3>
 
-        <table>
+        <table class="table-striped">
             <tr>
-                <td>Time</td>
-                <td>Name</td>
-                <td>Description</td>
+                <td class="text-md-center p-3 ">@Localizer["TimeAdd"]</td>
+                <td class="text-md-center p-3">@Localizer["Name"]</td>
+                <td class="text-md-center p-3">@Localizer["Description"]</td>
             </tr>
             @if (Model != null)
 @foreach (var item in Model.items)
 {
 <tr>
-            <td>@item.AddTime</td>
-    <td><a asp-controller="Item" asp-action="Index" asp-route-ItemId="@item.Id">@item.Name</a></td>
-    <td>@item.Description</td>
+            <td class="text-md-center">@item.AddTime</td>
+    <td class="text-md-center p-3"><a asp-controller="Item" asp-action="Index" asp-route-ItemId="@item.Id">@item.Name</a></td>
+    <td class="text-md-center p-3">@item.Description</td>
 </tr>}
         </table>
     </div>
-    <div class="container-fluid col-md-6">
-        <p class="text-md-center">Больше всего айтемов:</p>
+    <div class="container col-md-6">
+        <h3 class="text-justify p-3">@Localizer["MostNumerous"]</h3>
+        <table class="table-striped">
+            <tr>
+                <td class="text-md-center p-3">@Localizer["Name"]</td>
+                <td class="text-md-center p-3">@Localizer["Theme"]</td>
+                <td class="text-md-center p-3">@Localizer["CountItems"]</td>
+                <td class="text-md-center p-3">@Localizer["Owner"]</td>
+                <td class="text-md-center p-3">@Localizer["Description"]</td>
+            </tr>
+            @if (Model != null)
+    @foreach (var collection in Model.collections)
+    {
+        <tr>
+            <td class="text-md-center p-3"><a asp-controller="Collections" asp-action="Index" asp-route-collectionId="@collection.Id">@collection.Name</a></td>
+            <td class="text-md-center p-3">@Localizer[collection.Theme]</td>
+            <td class="text-md-center p-3">@collection.CountItems</td>
+            <td class="text-md-center p-3"><a asp-controller="Collections" asp-action="UserCollections" asp-route-name="@collection.User">@collection.User</a></td>
+            <td class="text-md-center p-3">@collection.Description</td>
+        </tr>
+}
+        </table>
     </div>
 </div>
 

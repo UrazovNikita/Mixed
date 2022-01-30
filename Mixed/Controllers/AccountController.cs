@@ -223,10 +223,13 @@ namespace Mixed.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Profile(string name)
+        public async Task<IActionResult> Profile(string name)
         {
             User user = await _userManager.FindByNameAsync(name);
             ViewBag.User = user;
+
+            var collections = _context.Collections.Where(x => x.User.Equals(name)).ToList();
+            ViewBag.Collections = collections;
             return View();
         }
 

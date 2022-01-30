@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Mixed
 {
-    public class ServiceHub : Hub
+    public class ReactionsHub : Hub
     {
         private readonly UserManager<User> _userManager;
         private readonly ApplicationContext _context;
 
-        public ServiceHub(ApplicationContext context, UserManager<User> userManager)
+        public ReactionsHub(ApplicationContext context, UserManager<User> userManager)
         {
             _userManager = userManager;
             _context = context;

@@ -43,7 +43,7 @@ namespace Mixed.Controllers
             {
                 Collection collection = _context.Collections.Find(collectionId);
                 collection.CountItems++;
-                Item item = new Item { Name = model.Name, Description = model.Description, CollectionId = collectionId.ToString() };
+                Item item = new Item { Name = model.Name, Description = model.Description, CollectionId = collectionId.ToString(), AddTime=DateTime.Now };
 
                 ImageSetter imageSetter = new ImageSetter();
                 imageSetter.SetImage(model, ref item);

@@ -120,9 +120,6 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  <data name="Chat" xml:space="preserve">
-    <value>Chat</value>
-  </data>
   <data name="Collections" xml:space="preserve">
     <value>Collections</value>
   </data>
@@ -133,15 +130,15 @@
     <value>Light</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Sign in</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
+    <value>Sign out</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign up</value>
   </data>
 </root>

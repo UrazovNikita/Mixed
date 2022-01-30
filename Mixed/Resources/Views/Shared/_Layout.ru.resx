@@ -120,9 +120,6 @@
   <data name="Admin" xml:space="preserve">
     <value>Админ</value>
   </data>
-  <data name="Chat" xml:space="preserve">
-    <value>Чат</value>
-  </data>
   <data name="Collections" xml:space="preserve">
     <value>Коллекции</value>
   </data>
@@ -138,10 +135,10 @@
   <data name="Logout" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Регистрация</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Поиск</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Регистрация</value>
   </data>
 </root>

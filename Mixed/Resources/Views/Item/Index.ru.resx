@@ -120,13 +120,16 @@
   <data name="Comment" xml:space="preserve">
     <value>Комментарий</value>
   </data>
+  <data name="Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
   <data name="Item" xml:space="preserve">
-    <value>Предмет</value>
+    <value>Айтем</value>
+  </data>
+  <data name="LeaveComment" xml:space="preserve">
+    <value>Оставить комментарий</value>
   </data>
   <data name="Like" xml:space="preserve">
     <value>Лайк</value>
-  </data>
-  <data name="ВtnEdit" xml:space="preserve">
-    <value>Редактировать</value>
   </data>
 </root>

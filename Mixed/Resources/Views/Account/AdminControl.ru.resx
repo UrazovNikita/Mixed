@@ -117,40 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnAddItems" xml:space="preserve">
-    <value>Добавить предмет</value>
+  <data name="BtnChangePermission" xml:space="preserve">
+    <value>Переключить доступ</value>
   </data>
-  <data name="BtnCreate" xml:space="preserve">
-    <value>Создать</value>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>Удалить</value>
   </data>
-  <data name="BtnDeleteItems" xml:space="preserve">
-    <value>Удалить предмет</value>
+  <data name="BtnRoles" xml:space="preserve">
+    <value>Роли</value>
   </data>
-  <data name="ID" xml:space="preserve">
-    <value>Индификатор</value>
+  <data name="ListOfUsers" xml:space="preserve">
+    <value>Список пользователей</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
   </data>
-  <data name="NameCollection" xml:space="preserve">
-    <value>Имя коллекции:</value>
+  <data name="Roles" xml:space="preserve">
+    <value>Роли</value>
   </data>
-  <data name="NewCollectionCreating" xml:space="preserve">
-    <value>Создание новой коллекции</value>
-  </data>
-  <data name="NumberItems" xml:space="preserve">
-    <value>Количество предметов</value>
-  </data>
-  <data name="Summary" xml:space="preserve">
-    <value>Краткое описание</value>
-  </data>
-  <data name="Tags" xml:space="preserve">
-    <value>Теги</value>
-  </data>
-  <data name="Theme" xml:space="preserve">
-    <value>Тема</value>
-  </data>
-  <data name="User" xml:space="preserve">
-    <value>Пользователь:</value>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
   </data>
 </root>

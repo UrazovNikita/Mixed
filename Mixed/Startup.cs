@@ -85,7 +85,7 @@ namespace Mixed
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHub<ServiceHub>("/Service");
+                endpoints.MapHub<ReactionsHub>("/Reaction");
             });
         }
     }

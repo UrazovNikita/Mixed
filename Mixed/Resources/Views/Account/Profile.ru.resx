@@ -126,37 +126,34 @@
   <data name="ChooseFile" xml:space="preserve">
     <value>Выберете файл</value>
   </data>
+  <data name="CollectionName" xml:space="preserve">
+    <value>Название коллекции</value>
+  </data>
   <data name="Collections" xml:space="preserve">
     <value>Коллекции</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Почта</value>
+  <data name="CountItems" xml:space="preserve">
+    <value>Количество айтемов</value>
   </data>
-  <data name="FirstName" xml:space="preserve">
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="Name" xml:space="preserve">
     <value>Имя</value>
-  </data>
-  <data name="Hobbies" xml:space="preserve">
-    <value>Хобби</value>
-  </data>
-  <data name="Info" xml:space="preserve">
-    <value>Информация</value>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Фамилия</value>
   </data>
   <data name="Profile" xml:space="preserve">
     <value>Профиль</value>
   </data>
-  <data name="RecentActivity" xml:space="preserve">
-    <value>Недавняя активность</value>
-  </data>
-  <data name="UploadPhoto" xml:space="preserve">
-    <value>Загрузить фото</value>
-  </data>
-  <data name="UserName" xml:space="preserve">
-    <value>Логин</value>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
   </data>
   <data name="UserProfile" xml:space="preserve">
-    <value>Профиль пользователя</value>
+    <value>Профиль пользователя:</value>
+  </data>
+  <data name="YourCollections" xml:space="preserve">
+    <value>Мои коллекции:</value>
   </data>
 </root>

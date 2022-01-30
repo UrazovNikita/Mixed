@@ -136,7 +136,7 @@
     <value>Name</value>
   </data>
   <data name="NameCollection" xml:space="preserve">
-    <value>Name of Collections</value>
+    <value>Name of Collections:</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User:</value>

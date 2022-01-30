@@ -124,12 +124,12 @@
     <value>Описание</value>
   </data>
   <data name="Img" xml:space="preserve">
-    <value>Картинка</value>
+    <value>Изображение</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
   </data>
   <data name="NewItem" xml:space="preserve">
-    <value>Создание нового предмета</value>
+    <value>Новый айтем</value>
   </data>
 </root>

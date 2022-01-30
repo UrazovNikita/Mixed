@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnAddItems" xml:space="preserve">
-    <value>Add Items</value>
+  <data name="BtnCreateCollections" xml:space="preserve">
+    <value>Create Collection</value>
   </data>
-  <data name="BtnCreate" xml:space="preserve">
-    <value>Create</value>
+  <data name="BtnDeleteCollections" xml:space="preserve">
+    <value>Delete Collection</value>
   </data>
-  <data name="BtnDeleteItems" xml:space="preserve">
-    <value>Delete Items</value>
-  </data>
-  <data name="ID" xml:space="preserve">
-    <value>ID</value>
+  <data name="Collections" xml:space="preserve">
+    <value>Collections</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -142,7 +139,7 @@
     <value>Number of Items</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Summary</value>
+    <value>Description</value>
   </data>
   <data name="Tags" xml:space="preserve">
     <value>Tags</value>
@@ -151,6 +148,6 @@
     <value>Theme</value>
   </data>
   <data name="User" xml:space="preserve">
-    <value>User: </value>
+    <value>User:</value>
   </data>
 </root>

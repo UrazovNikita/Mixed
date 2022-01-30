@@ -117,17 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Alcohol" xml:space="preserve">
-    <value>Alcohol</value>
+  <data name="Art" xml:space="preserve">
+    <value>Art</value>
   </data>
   <data name="Books" xml:space="preserve">
     <value>Books</value>
   </data>
-  <data name="Create" xml:space="preserve">
+  <data name="BtnCreate" xml:space="preserve">
     <value>Create</value>
   </data>
-  <data name="Guns" xml:space="preserve">
-    <value>Guns</value>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="Money" xml:space="preserve">
     <value>Money</value>
@@ -136,13 +136,10 @@
     <value>Name</value>
   </data>
   <data name="NewColl" xml:space="preserve">
-    <value>New Collection Creating</value>
+    <value>New collection:</value>
   </data>
   <data name="Stamps" xml:space="preserve">
     <value>Stamps</value>
-  </data>
-  <data name="Summary" xml:space="preserve">
-    <value>Summary</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>Theme</value>

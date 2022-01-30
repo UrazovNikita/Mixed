@@ -118,36 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BtnCreateCollections" xml:space="preserve">
-    <value>Create Collection</value>
+    <value>Создать Коллекцию</value>
   </data>
   <data name="BtnDeleteCollections" xml:space="preserve">
-    <value>Delete Collection</value>
+    <value>Удалить Коллекцию</value>
   </data>
   <data name="Collections" xml:space="preserve">
-    <value>Collections</value>
-  </data>
-  <data name="ID" xml:space="preserve">
-    <value>ID</value>
+    <value>Коллекции</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Имя</value>
   </data>
   <data name="NameCollection" xml:space="preserve">
-    <value>Name of Collection: </value>
+    <value>Имя коллекции</value>
   </data>
   <data name="NumberItems" xml:space="preserve">
-    <value>Number of Items</value>
+    <value>Количество айтемов</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Summary</value>
+    <value>Описание</value>
   </data>
   <data name="Tags" xml:space="preserve">
-    <value>Tags</value>
+    <value>Теги</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>Тема</value>
   </data>
   <data name="User" xml:space="preserve">
-    <value>User:</value>
+    <value>Пользователь:</value>
   </data>
 </root>

@@ -124,12 +124,12 @@
     <value>Description</value>
   </data>
   <data name="Img" xml:space="preserve">
-    <value>Imagine</value>
+    <value>Image</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="NewItem" xml:space="preserve">
-    <value>New Item Creating</value>
+    <value>New Item </value>
   </data>
 </root>

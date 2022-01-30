@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Alcohol" xml:space="preserve">
-    <value>Алкоголь</value>
+  <data name="Art" xml:space="preserve">
+    <value>Исскуство</value>
   </data>
   <data name="Books" xml:space="preserve">
     <value>Книги</value>
@@ -128,9 +128,6 @@
   </data>
   <data name="Collections" xml:space="preserve">
     <value>Коллекции</value>
-  </data>
-  <data name="Guns" xml:space="preserve">
-    <value>Оружие</value>
   </data>
   <data name="ID" xml:space="preserve">
     <value>Индификатор</value>
@@ -157,7 +154,7 @@
     <value>Марки</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Краткое описание</value>
+    <value>Описание</value>
   </data>
   <data name="Tags" xml:space="preserve">
     <value>Теги</value>

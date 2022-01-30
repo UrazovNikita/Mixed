@@ -16,7 +16,7 @@
     .btn-body:hover {
         width: fit-content;
         height: fit-content;
-        margin:10px;
+        margin: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-right: 15px;
@@ -31,10 +31,14 @@
 .btn-navbar {
     width: fit-content;
     height: fit-content;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 15px;
     padding-left: 15px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
     background-color: #660066;
     color: white;
     border: hidden;
@@ -45,6 +49,8 @@
     .btn-navbar:hover {
         width: fit-content;
         height: fit-content;
+        margin-left: 5px;
+        margin-right: 5px;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-right: 15px;
@@ -61,10 +67,22 @@
 
 .nav-link {
     color: white !important;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 5px;
+    margin-right: 5px; 
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
     .nav-link:hover {
         color: #CE56CE !important;
+        width: fit-content;
+        height: fit-content;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 
 .navbar-brand {
