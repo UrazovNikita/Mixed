@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Mixed.Controllers
 {
-    [Route("[controller]/[action]")]
     [Authorize(Roles = "admin")]
     public class RolesController : Controller
     {

@@ -21,7 +21,7 @@
         {
             <tr>
                 <td><a asp-controller="Account" asp-action="Profile" asp-route-name="@user.UserName">@user.UserName</a></td>
-                <td><a class="btn btn-sm btn-primary text-center" asp-controller="Roles" asp-action="Edit" asp-route-userid="@user.Id">@Localizer["Roles"]</a></td>
+                <td><a class="btn btn-body text-center" asp-controller="Roles" asp-action="Edit" asp-route-userid="@user.Id">@Localizer["Roles"]</a></td>
                 <td>@if (user.Permit)
                 { 
                     <div id="square" style="background:green;">Permit</div>
@@ -36,8 +36,8 @@
         }
     </table>
 </form>
-<a class="btn btn-sm btn-primary" asp-controller="Roles" asp-action="Create">@Localizer["BtnAddRole"]</a>
-<a class="btn btn-sm btn-primary" asp-controller="Roles" asp-action="Index">@Localizer["BtnRolesList"]</a>
+<a class="btn btn-body" asp-controller="Roles" asp-action="Create">@Localizer["BtnAddRole"]</a>
+<a class="btn btn-body" asp-controller="Roles" asp-action="Index">@Localizer["BtnRolesList"]</a>
 
 <script>
     var f = document.getElementById('users');
