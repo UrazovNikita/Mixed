@@ -26,8 +26,6 @@
             @foreach (var collection in Model)
             {
                 <tr>
-                    <td></td>
-                    @*<td><img src="@collection.UrlImg" alt="Image" style="width: 150px; height: 220px;" /></td>*@
                     <td><a asp-controller="Collections" asp-action="Index" asp-route-collectionId="@collection.Id">@collection.Name</a></td>
                     <td>@Localizer[collection.Theme]</td>
                     <td>@collection.CountItems</td>

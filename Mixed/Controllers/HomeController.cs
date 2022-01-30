@@ -1,15 +1,31 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Mixed.Models;
 using System;
+using System.Linq;
 
 namespace Mixed.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationContext _context;
+        public HomeController(ApplicationContext context)
+        {
+            _context = context;
+        }
         public ActionResult Index()
         {
-            return View();
+
+            IQueryable<Collection> collections = _context.Collections;
+            IQueryable<Item> items = _context.Items;
+
+            collections = collections.OrderByDescending(s => s.CountItems);
+            items = items.OrderByDescending(s => s.AddTime);
+
+            HomeModel model = new HomeModel(items.ToList(), collections.ToList());
+
+            return View(model);
         }
 
 

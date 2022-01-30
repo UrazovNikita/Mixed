@@ -1,4 +1,6 @@
-﻿using Mixed.Models;
+﻿
+
+using Mixed.Models;
 using Mixed.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +11,6 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace Mixed.Controllers
 {
- 
     public class CollectionsController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -40,14 +41,22 @@ namespace Mixed.Controllers
             }
             return View(items);
         }
-        [HttpGet]
-        public ActionResult Collections(SortState sortOrder = SortState.NameAsc)
+
+        private IQueryable<Collection> _Sort(User user = null, SortState sortType = SortState.NameAsc)
         {
-            IQueryable<Collection> collections = _context.Collections;
-            ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewData["CountSort"] = sortOrder == SortState.CountAsc ? SortState.CountDesc : SortState.CountAsc;
-            ViewData["ThemeSort"] = sortOrder == SortState.ThemeAsc ? SortState.ThemeDesc : SortState.ThemeAsc;
-            switch (sortOrder)
+            IQueryable<Collection> collections;
+            if (user == null)
+            {
+                collections = _context.Collections;
+            }
+            else
+            {
+                collections = _context.Collections.Where(p => p.UserId.Equals(user.Id));
+            }
+            ViewData["NameSort"] = sortType == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
+            ViewData["CountSort"] = sortType == SortState.CountAsc ? SortState.CountDesc : SortState.CountAsc;
+            ViewData["ThemeSort"] = sortType == SortState.ThemeAsc ? SortState.ThemeDesc : SortState.ThemeAsc;
+            switch (sortType)
             {
                 case SortState.NameAsc:
                     collections = collections.OrderBy(s => s.Name);
@@ -68,9 +77,15 @@ namespace Mixed.Controllers
                     collections = collections.OrderBy(s => s.CountItems);
                     break;
             }
-            return View(collections.ToList());
+            return collections;
         }
 
+        [HttpGet]
+        public ActionResult Collections(SortState sortOrder)
+        {
+            var collections = _Sort(null, sortOrder);
+            return View(collections.ToList());
+        }
 
         [HttpGet]
         public IActionResult Create(string username)
@@ -86,35 +101,44 @@ namespace Mixed.Controllers
             if (ModelState.IsValid)
             {
                 User user = await _userManager.FindByNameAsync(username);
-                Collection collection = new Collection { Name = model.Name, Theme = model.Theme, Description = model.Description, User = user.UserName, UserId = user.Id, CountItems = 0};
-               
+                Collection collection = new Collection { Name = model.Name, Theme = model.Theme, Description = model.Description, User = user.UserName, UserId = user.Id, CountItems = 0 };
+
                 _context.Collections.Add(collection);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("ProfileCollections", "Collections", new { name = username });
+                return RedirectToAction("UserCollections", "Collections", new { name = username });
             }
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Delete(Guid[] selectedCollections)
-        {
-            string name = _context.Collections.Find(selectedCollections[0]).User;
-            foreach (var id in selectedCollections)
+        public async Task<IActionResult> Delete(Guid[] selectedCollections, string username)
+        {            
+            if (selectedCollections.Length == 0)
             {
-                Collection collection = _context.Collections.Find(id);
-                var items = _context.Items.Where(p => p.CollectionId == id.ToString()).ToList();
-                if (collection == null)
-                {
-                    return NotFound();
-                }
-                _context.Collections.Remove(collection);
-                foreach (var item in items)
-                {
-                    _context.Items.Remove(item);
-                }
-                await _context.SaveChangesAsync();
+                return RedirectToAction("UserCollections", "Collections", new {name= username });
             }
-            return RedirectToAction("ProfileCollections", "Collections", new { name });
-        }
+            else
+            {
+                
+                foreach (var id in selectedCollections)
+                {
+                    Collection collection = _context.Collections.Find(id);
+                    var items = _context.Items.Where(p => p.CollectionId == id.ToString()).ToList();
+                    if (collection == null)
+                    {
+                        return NotFound();
+                    }
+                    _context.Collections.Remove(collection);
+                    foreach (var item in items)
+                    {
+                        _context.Items.Remove(item);
+                    }
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction("UserCollections", "Collections", new {name=username});
+            }
+        }         
+            
+        
 
 
         [HttpGet]
@@ -132,42 +156,18 @@ namespace Mixed.Controllers
             Collection collection = _context.Collections.Find(collectionId);
             collection.Name = model.Name;
             collection.Theme = model.Theme;
-            collection.Description= model.Description;
+            collection.Description = model.Description;
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Collections", new { collectionId });
         }
         [HttpGet]
-        public async Task<ActionResult> ProfileCollections(string name, SortState sortOrder = SortState.NameAsc)
+        public async Task<ActionResult> UserCollections(string name, SortState sortOrder)
         {
             User user = await _userManager.FindByNameAsync(name);
             ViewBag.User = user;
-            IQueryable<Collection> collections = _context.Collections.Where(p => p.UserId.Equals(user.Id));
-            ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewData["CountSort"] = sortOrder == SortState.CountAsc? SortState.CountDesc : SortState.CountAsc;
-            ViewData["ThemeSort"] = sortOrder == SortState.ThemeAsc? SortState.ThemeDesc : SortState.ThemeAsc;
-            switch (sortOrder)
-            {
-                case SortState.NameAsc:
-                    collections = collections.OrderBy(s => s.Name);
-                    break;
-                case SortState.NameDesc:
-                    collections = collections.OrderByDescending(s => s.Name);
-                    break;
-                case SortState.CountDesc:
-                    collections = collections.OrderByDescending(s => s.CountItems);
-                    break;
-                case SortState.ThemeAsc:
-                    collections = collections.OrderBy(s => s.Theme);
-                    break;
-                case SortState.ThemeDesc:
-                    collections = collections.OrderByDescending(s => s.Theme);
-                    break;
-                default:
-                    collections = collections.OrderBy(s => s.CountItems);
-                    break;
-            }
+            var collections = _Sort(user, sortOrder);
             return View(collections.ToList());
-        }     
-       
+        }
+
     }
 }

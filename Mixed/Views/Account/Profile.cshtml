@@ -22,7 +22,7 @@
                                 @if (ViewBag.User.About != null)
                     @ViewBag.User.About
                             </p>
-                            <a asp-controller="Collections" asp-action="ShowUserCollections" asp-route-sortOrder="@ViewBag.ThemeSort" asp-route-name="@ViewBag.User.UserName">@Localizer["Collections"]</a>
+                            <a asp-controller="Collections" asp-action="UserCollections" asp-route-sortOrder="@ViewBag.ThemeSort" asp-route-name="@ViewBag.User.UserName">@Localizer["Collections"]</a>
                         </div>
                     </div>
                 </div>

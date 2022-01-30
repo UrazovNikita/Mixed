@@ -10,5 +10,7 @@
         CountDesc,
         ThemeAsc,
         ThemeDesc,
+        TimeAsc,
+        TimeDesc
     }
 }
