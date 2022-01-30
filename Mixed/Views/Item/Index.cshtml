@@ -1,7 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
-
 <div>
     <h4>@Localizer["Item"]:@Model.Name </h4>
     <hr />
@@ -22,7 +21,8 @@
 </div>
 
 <span id="counts">@ViewBag.Likes</span>
-<button class="btn btn-primary m-1" id="likeBtn">@Localizer["Like"]</button>
+
+<button class="btn btn-body" id="likeBtn">@Localizer["Like"]</button>
 
 <div class="container">
     <div class="row bootstrap snippets bootdeys">
@@ -32,7 +32,7 @@
                     <div class="panel-body">
                         <textarea class="form-control" placeholder="@Localizer["WriteComment"]" rows="3" id="comment"></textarea>
                         <br>
-                        <button type="button" class="btn btn-info pull-right" id="commentBtn">@Localizer["Comment"]</button>
+                        <button type="button" class="btn btn-body" id="commentBtn">@Localizer["Comment"]</button>
                         <div class="clearfix"></div>
                         <hr>
                         <ul class="media-list" id="comments">

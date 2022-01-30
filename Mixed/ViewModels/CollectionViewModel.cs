@@ -17,11 +17,5 @@ namespace Mixed.ViewModels
         [Required]
         [Display(Name = "Description")]
         public string Description { get; set; }
-
-        //[Display(Name = "Img")]
-        //[MaxFileSize(1 * 1024 * 1024)]
-        //[PermittedExtensions(new string[] { ".jpg", ".png", ".gif", ".jpeg" })]
-        public IFormFile Img { get; set; }
-
     }
 }

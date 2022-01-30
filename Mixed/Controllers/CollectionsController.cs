@@ -136,7 +136,7 @@ namespace Mixed.Controllers
                 }
                 return RedirectToAction("UserCollections", "Collections", new {name=username});
             }
-        }         
+        }        
             
         
 

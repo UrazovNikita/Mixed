@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace Mixed.Controllers
 {
-    [Route("[controller]/[action]")]
     public class ItemController : Controller
     {
         private readonly ApplicationContext _context;
@@ -92,21 +91,6 @@ namespace Mixed.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction("Index", "Collections", new { collectionId });
-        }
-
-        //[HttpPost]
-        //private async Task UploadFile(Item item)
-        //{
-        //    string fileNameForStorage = FormFileName(item.Name, item.Img.FileName);
-        //    //item.UrlImg = await _cloudStorage.UploadFileAsync(item.Img, fileNameForStorage);
-        //    item.ImageStorageName = fileNameForStorage;
-        //}
-
-        private static string FormFileName(string title, string fileName)
-        {
-            var fileExtension = Path.GetExtension(fileName);
-            var fileNameForStorage = $"{title}-{DateTime.Now.ToString("yyyyMMddHHmmss")}{fileExtension}";
-            return fileNameForStorage;
         }
     }
 }

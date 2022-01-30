@@ -26,11 +26,6 @@
             <textarea class="form-control" rows="3" asp-for="Description"></textarea>
             <span asp-validation-for="Description"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Img" class="control-label">@Localizer["Img"]</label>
-            <input type="file" asp-for="Img" class="form-control" />
-            <span asp-validation-for="Img" class="text-danger"></span>
-        </div>
         <div>
             <button type="submit" class="btn btn-primary mt-1">@Localizer["Create"]</button>
         </div>
