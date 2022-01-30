@@ -59,6 +59,7 @@ namespace Mixed
                 options.SupportedUICultures = supportedCultures;
             });
 
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -79,14 +80,15 @@ namespace Mixed
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHub<ReactionsHub>("/Reaction");
+                endpoints.MapHub<ReactionsHub>("/ReactionsHub");
             });
+
         }
     }
 }

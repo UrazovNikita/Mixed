@@ -138,7 +138,7 @@
   <data name="Theme" xml:space="preserve">
     <value>Тема</value>
   </data>
-  <data name="TiemAdd" xml:space="preserve">
+  <data name="TimeAdd" xml:space="preserve">
     <value>Время</value>
   </data>
 </root>

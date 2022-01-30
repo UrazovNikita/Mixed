@@ -14,6 +14,26 @@ namespace Mixed.Controllers
         {
             _context = context;
         }
+
+        [HttpPost]
+        public IActionResult ChangeTheme()
+        {
+            CookieOptions cookie = new CookieOptions();
+            cookie.Expires = DateTime.Now.AddDays(1);
+
+            if (Request.Cookies["theme"].Contains("light"))
+            {
+                Response.Cookies.Append("theme", "dark");
+            }
+           if(Request.Cookies["theme"].Contains("dark"))
+                {
+                Response.Cookies.Append("theme", "light");
+            }
+
+            return RedirectToAction("Index");
+        }
+
+            
         public ActionResult Index()
         {
 
