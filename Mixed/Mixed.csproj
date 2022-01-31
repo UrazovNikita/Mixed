@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Resources\Views\Account\UserEdit.en.resx" />
+    <EmbeddedResource Remove="Resources\Views\Account\UserEdit.ru.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\Views\Account\UserEdit.ru.resx" />
+    <None Include="Resources\Views\Account\UserEdit.en.resx" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
