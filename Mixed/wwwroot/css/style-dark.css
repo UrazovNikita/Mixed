@@ -2,6 +2,9 @@
     background-color: #242222;
     color: white;
 }
+ table{
+     color:white;
+ }
 
 .btn-body {
     width: fit-content;

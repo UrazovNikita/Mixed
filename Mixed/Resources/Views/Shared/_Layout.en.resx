@@ -120,6 +120,9 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>Change theme</value>
+  </data>
   <data name="Collections" xml:space="preserve">
     <value>Collections</value>
   </data>

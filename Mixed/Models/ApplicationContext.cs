@@ -9,7 +9,6 @@ namespace Mixed.Models
         public DbSet<Collection> Collections { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Like> Likes { get; set; }
-        public DbSet<Messenge> Messenges { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> dbContextOptions) : base(dbContextOptions)
         {

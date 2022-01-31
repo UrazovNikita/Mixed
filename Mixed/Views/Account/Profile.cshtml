@@ -5,7 +5,7 @@
     <div class="container col-md-6">
         <h2>@Localizer["UserProfile"]</h2>
         <h5>@Localizer["Name"]</h5>
-        <h4 style="background: LavenderBlush">@ViewBag.User.UserName</h4>
+        <h4>@ViewBag.User.UserName</h4>
         <h5>@Localizer["About"]</h5>
         <h4>@ViewBag.User.About</h4>
         <img style='width:80px; height:80px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(ViewBag.User.Image))" />

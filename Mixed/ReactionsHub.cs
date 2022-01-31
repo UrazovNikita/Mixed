@@ -20,7 +20,7 @@ namespace Mixed
         public async Task Comment(string message, string itemId, string UserName)
         {
             User user = await _userManager.FindByNameAsync(UserName);
-            Comment comment = new Comment { UserName = UserName, ItemId = itemId, messenge = message};
+            Comment comment = new Comment { UserName = UserName, ItemId = itemId, Message = message};
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
             var comments = _context.Comments.Where(p => p.ItemId.Equals(itemId)).ToList();
