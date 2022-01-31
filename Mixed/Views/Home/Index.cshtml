@@ -39,7 +39,7 @@
             <td class="text-md-center p-3">@Localizer[collection.Theme]</td>
             <td class="text-md-center p-3">@collection.CountItems</td>
             <td class="text-md-center p-3"><a asp-controller="Collections" asp-action="UserCollections" asp-route-name="@collection.User">@collection.User</a></td>
-            <td class="text-md-center p-3">@collection.Description</td>
+            <td class="text-md-center p-3"><markdown>@collection.Description</markdown></td>
         </tr>
 }
         </table>

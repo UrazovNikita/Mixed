@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
+
 <h4>@Localizer["Collections"]</h4>
 <form id='collections' method="post">
     @if (User.IsInRole("admin") || User.Identity.Name.Equals(ViewBag.User.UserName))
@@ -25,7 +26,7 @@
         <td><a asp-controller="Collections" asp-action="Index" asp-route-collectionId="@collection.Id">@collection.Name</a></td>
         <td>@collection.Theme</td>
         <td>@collection.CountItems</td>
-        <td>@collection.Description</td>
+        <td><markdown>(collection.Description)</markdown></td>
         @if (User.IsInRole("admin") || User.Identity.Name.Equals(ViewBag.User.UserName))
         {
     <td><input type="checkbox" class="collection" name="selectedCollections" value="@collection.Id" /></td>                    }
