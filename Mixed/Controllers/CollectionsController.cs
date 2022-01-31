@@ -22,19 +22,18 @@ namespace Mixed.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Search(string searchString)
-        {
-            if(!string.IsNullOrEmpty(searchString))
-            {
-                var resurltCol = _context.Collections.FullTextSearchQuery(searchString).ToList();
-                var resurltCom = _context.Comments.FullTextSearchQuery(searchString).ToList();
-                var resultIte = _context.Items.FullTextSearchQuery(searchString).ToList();
+        //[HttpPost]
+        //public async Task<IActionResult> Search(string searchString)
+        //{
+        //    if(!string.IsNullOrEmpty(searchString))
+        //    {
+        //        var resurltCol = _context.Collections.FullTextSearchQuery(searchString).ToList();
+        //        var resurltCom = _context.Comments.FullTextSearchQuery(searchString).ToList();
+        //        var resultIte = _context.Items.FullTextSearchQuery(searchString).ToList();                
                 
-                
-            }
-            return View();
-        }
+        //    }
+        //    return View();
+        //}
 
         [HttpGet]
         public ActionResult Index(Guid collectionId, SortState sortOrder = SortState.NameAsc)
