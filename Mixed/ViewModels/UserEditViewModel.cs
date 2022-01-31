@@ -4,9 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Mixed.ViewModels
 {
     public class UserEditViewModel
-    {
-        [Display(Name = "UserName")]
-        public string UserName { get; set; }
+    {     
 
         [Display(Name = "About")]
         public string About { get; set; }
