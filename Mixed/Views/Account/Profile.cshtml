@@ -1,6 +1,7 @@
 ﻿@model Mixed.Models.User
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
+
 <div class="row">
     <div class="container col-md-6">
         <h2>@Localizer["UserProfile"]</h2>
@@ -9,6 +10,11 @@
         <h5>@Localizer["About"]</h5>
         <h4>@ViewBag.User.About</h4>
         <img style='width:80px; height:80px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(ViewBag.User.Image))" />
+
+        <a asp-controller="Account" asp-action="UserEdit" asp-route-userName="@ViewBag.User.UserName">
+            <input type="button" class="btn btn-body" value="@Localizer["Edit"]" />
+        </a>
+
     </div>      
     <div class="container col-md-6">
         <a asp-controller="Collections" asp-action="UserCollections" asp-route-sortOrder="@ViewBag.ThemeSort" asp-route-name="@ViewBag.User.UserName">

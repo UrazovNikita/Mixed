@@ -40,49 +40,50 @@
                         <li class="nav-item">
                             <form method="post">
                                 <button type="submit" class="btn btn-navbar" asp-controller="Home" asp-action="ChangeTheme">@Localizer["ChangeTheme"]</button>
-                                </form>
+                            </form>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Collections" asp-action="Collections">@Localizer["Collections"]</a>
                         </li>
                         <li class="nav-item">
-                            <input class="form-control" placeholder="@Localizer["Search"]" name="searchString" />
+                            <form asp-controller="Collections" asp-action="Search">
+                                <input type="text" name="searchString" />
+                                <input type="submit" class="btn btn-navbar" value="@Localizer["Search"]" />
+                            </form>
                         </li>
-                        <li class="nav-item">
-                            <input type="submit" class="btn btn-navbar" value="@Localizer["Search"]" />
-                        </li>
+
                         @if (User.Identity.IsAuthenticated)
                         {
 
 
-            <li class="nav-item">
-                <a asp-controller="Account" asp-action="Profile" asp-route-name="@User.Identity.Name">
-                    <input type="button" class="btn btn-navbar" value="@User.Identity.Name" />
-                </a>
-            </li>
+                    <li class="nav-item">
+                        <a asp-controller="Account" asp-action="Profile" asp-route-name="@User.Identity.Name">
+                            <input type="button" class="btn btn-navbar" value="@User.Identity.Name" />
+                        </a>
+                    </li>
 
-                            <li class="nav-item">
-                                <form class="form-inline" asp-controller="Account" asp-action="Logout">
-                                    <button type="submit" class="nav-link btn btn-link  ">@Localizer["Logout"]</button>
-                                </form>
-                            </li>
-                                            @if (User.IsInRole("admin"))
-                                            {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="AdminControl">@Localizer["Admin"]</a>
-                            </li>
-} }
+                                    <li class="nav-item">
+                                        <form class="form-inline" asp-controller="Account" asp-action="Logout">
+                                            <button type="submit" class="nav-link btn btn-link  ">@Localizer["Logout"]</button>
+                                        </form>
+                                    </li>
+                                                    @if (User.IsInRole("admin"))
+                                                    {
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Account" asp-action="AdminControl">@Localizer["Admin"]</a>
+                                    </li>} }
 
-                                        else
-                                        {
-                            <li class="nav-item">
-                                <a class="nav-link " asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
-                            </li>
-                                            <li class="nav-item">
-                                                <a asp-controller="Account" asp-action="Register">
-                                                    <input type="button" class="btn btn-navbar" value="@Localizer["SignUp"]" />
-                                                </a>
-                                            </li>}
+                                                else
+                                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link " asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
+                                    </li>
+                                                    <li class="nav-item">
+                                                        <a asp-controller="Account" asp-action="Register">
+                                                            <input type="button" class="btn btn-navbar" value="@Localizer["SignUp"]" />
+                                                        </a>
+                                                    </li>
+}
                     </ul>
                 </div>
             </div>

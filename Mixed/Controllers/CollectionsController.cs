@@ -1,5 +1,4 @@
-﻿
-
+﻿using Korzh.EasyQuery.Linq;
 using Mixed.Models;
 using Mixed.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -21,6 +20,20 @@ namespace Mixed.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string searchString)
+        {
+            if(!string.IsNullOrEmpty(searchString))
+            {
+                var resurltCol = _context.Collections.FullTextSearchQuery(searchString).ToList();
+                var resurltCom = _context.Comments.FullTextSearchQuery(searchString).ToList();
+                var resultIte = _context.Items.FullTextSearchQuery(searchString).ToList();
+                
+                
+            }
+            return View();
         }
 
         [HttpGet]

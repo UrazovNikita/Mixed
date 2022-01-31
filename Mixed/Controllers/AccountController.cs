@@ -87,18 +87,7 @@ namespace Mixed.Controllers
                 }
             }
             return View(model);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> LoginAsync(string returnUrl = null)
-        {
-            var externalProviders = await _signInManager.GetExternalAuthenticationSchemesAsync();
-            return View(new LoginViewModel
-            {
-                ReturnUrl = returnUrl,
-                ExternalProviders = externalProviders
-            });
-        }
+        }      
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -140,6 +129,7 @@ namespace Mixed.Controllers
             return View(model);
         }
 
+        #region External
         //[AllowAnonymous]
         //public IActionResult ExternalLogin(string provider, string returnUrl)
         //{
@@ -147,6 +137,20 @@ namespace Mixed.Controllers
         //    var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
         //    return Challenge(properties, provider);
         //}
+
+
+
+  //[HttpGet]
+        //public async Task<IActionResult> LoginAsync(string returnUrl = null)
+        //{
+        //    var externalProviders = await _signInManager.GetExternalAuthenticationSchemesAsync();
+        //    return View(new LoginViewModel
+        //    {
+        //        ReturnUrl = returnUrl,
+        //        ExternalProviders = externalProviders
+        //    });
+        //}
+
 
         //[AllowAnonymous]
         //public async Task<IActionResult> ExternalLoginCallBack(string returnUrl)
@@ -214,6 +218,8 @@ namespace Mixed.Controllers
         //    return View(model);
         //}
 
+        #endregion
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -234,14 +240,30 @@ namespace Mixed.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(User model, string userId)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UserEdit(UserEditViewModel model, string userName)
         {
-            User user = await _userManager.FindByIdAsync(userId);
-            var name = user.UserName;
-            if (model.About != null)
-                user.About = model.About;
-            await _userManager.UpdateAsync(user);
-            return RedirectToAction("Profile", "Account", new { name });
+            if (ModelState.IsValid)
+            {
+                User user = await _userManager.FindByIdAsync(userName);
+
+                if (model.UserName != null)
+                    user.UserName = model.UserName;
+                if (model.About != null)
+                    user.About = model.About;
+                if (model.Image != null)
+                {
+                    ImageSetter imageSetter = new ImageSetter();
+                    imageSetter.SetImage(model, ref user);
+                }
+                if (model.Password != null)
+                {
+                    await _userManager.ResetPasswordAsync(user, model.OldPassword, model.Password);
+                }
+
+                await _userManager.UpdateAsync(user);
+            }
+            return RedirectToAction("Profile", "Account", new { model.UserName });
         }
 
         [Authorize(Roles = "admin")]
